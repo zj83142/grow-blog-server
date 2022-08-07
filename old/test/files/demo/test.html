@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="getBtn">发送GET请求</button>
+    <button id="postBtn">发送POST请求</button>
+    <button id="putBtn">发送PUT请求</button>
+    <button id="jsonpBtn">发送JSONP请求</button>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(function () {
+        $("#getBtn").on("click", function () {
+          $.ajax({
+            type: "GET",
+            url: "http://127.0.0.1:8081/api/getUser",
+            data: { user: "小红", age: 20, method: "GET" },
+            success: function (res) {
+              console.log(res);
+            },
+          });
+        });
+        $("#postBtn").on("click", function () {
+          $.ajax({
+            type: "POST",
+            url: "http://127.0.0.1:8081/api/updateUser",
+            data: { user: "小红", age: 20, method: "POST" },
+            success: function (res) {
+              console.log(res);
+            },
+          });
+        });
+        $("#getPut").on("click", function () {
+          $.ajax({
+            type: "PUT",
+            url: "http://127.0.0.1:8081/api/getUser",
+            data: { user: "小红", age: 20, method: "PUT" },
+            success: function (res) {
+              console.log(res);
+            },
+          });
+        });
+        $("#jsonpBtn").on("click", function () {
+          $.ajax({
+            type: "GET",
+            url: "http://127.0.0.1:8081/api/jsonp",
+            dataType: "jsonp",
+            data: { user: "小红", age: 20, method: "JSONP" },
+            success: function (res) {
+              console.log(res);
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

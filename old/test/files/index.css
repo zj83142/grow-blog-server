@@ -1,0 +1,97 @@
+
+      body {
+        padding: 0;
+        margin: 0;
+        min-width: 600px;
+        background: #fff;
+      }
+      .content {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .loader {
+        position: relative;
+        width: 300px;
+        height: 60px;
+        -webkit-filter: url("#goo");
+        filter: url("#goo");
+      }
+      .loader__item {
+        position: absolute;
+        display: inline-block;
+        top: 0;
+        left: 0;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(45deg, #61c2ff 0%, #1aa7ff 100%);
+        border-radius: 50%;
+        -webkit-animation: loading 4s infinite;
+        animation: loading 4s infinite;
+        -webkit-transform: scale(0.1);
+        transform: scale(0.1);
+        -webkit-transform-origin: center left;
+        transform-origin: center left;
+      }
+      .loader__item:nth-child(2) {
+        -webkit-animation-delay: 0.4s;
+        animation-delay: 0.4s;
+      }
+      .loader__item:nth-child(3) {
+        -webkit-animation-delay: 0.8s;
+        animation-delay: 0.8s;
+      }
+      .loader__item:nth-child(4) {
+        -webkit-animation-delay: 1.2s;
+        animation-delay: 1.2s;
+      }
+      .loader__item:nth-child(5) {
+        -webkit-animation-delay: 1.6s;
+        animation-delay: 1.6s;
+      }
+      @-webkit-keyframes loading {
+        0% {
+          -webkit-transform: scale(0.1);
+          transform: scale(0.1);
+        }
+        45% {
+          left: 120px;
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+        90% {
+          left: 294px;
+          -webkit-transform: scale(0.1);
+          transform: scale(0.1);
+        }
+      }
+      @keyframes loading {
+        0% {
+          -webkit-transform: scale(0.1);
+          transform: scale(0.1);
+        }
+        45% {
+          left: 120px;
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+        90% {
+          left: 294px;
+          -webkit-transform: scale(0.1);
+          transform: scale(0.1);
+        }
+      }
+      .title {
+        margin-bottom: 60px;
+        font: 18px "Trebuchet MS";
+        color: #444;
+        text-align: center;
+      }
+      svg {
+        display: none;
+      }
+    
